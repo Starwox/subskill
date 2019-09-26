@@ -1,12 +1,33 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+{% extends 'skeleton.html.twig' %}
+{% block title %}
+    Home
+{% endblock %}
+{% block body %}
+<body>
+        {{ parent() }}
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Article</th>
+                <th scope="col">Catégorie</th>
+                <th scope="col">Détails</th>
+            </tr>
+            </thead>
+            <tbody>
+    {% for article in articles %}
+            <tr>
+                <th scope="row">{{  article.id }}</th>
+                <td>{{  article.title }}</td>
+                <td>{{  article.category.title }}</td>
+                <td><span class="badge badge-primary badge-pill"><a href="/article/details/{{ article.id }}">Détails</a></span></td>
+            </tr>
+    {% endfor %}
+            </tbody>
+        </table>
+
+    {% block javascripts %}
+    <script src="{{ asset('build/app.js') }}"></script>
+    {% endblock %}
     </body>
-</html>
+{% endblock %}

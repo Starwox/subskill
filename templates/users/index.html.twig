@@ -1,0 +1,55 @@
+{% extends 'skeleton.html.twig' %}
+
+{% block title %}Contact!{% endblock %}
+
+{% block body %}
+{{ parent() }}
+<div class="example-wrapper">
+{{ form_start(form) }}
+    <fieldset class="form-group">
+        <div class="row">
+            <label class="col-form-label col-sm-2 pt-0">Civilité</label>
+            <div class="col-sm-10">
+                <div class="form-check">
+                    <!-- insert data here -->
+                    {{ form_row(form.civility) }}
+                </div>
+            </div>
+        </div>
+    </fieldset>
+
+    <div class="form-group row">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Nom</label>
+        <div class="col-sm-10">
+            {{ form_row(form.last_name) }}
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Prénom</label>
+        <div class="col-sm-10">
+            {{ form_row(form.first_name) }}
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">E-mail</label>
+        <div class="col-sm-10">
+            {{ form_row(form.email) }}
+        </div>
+    </div>
+
+    <div class="form-group row">
+            {{ form_row(form.object) }}
+    </div>
+
+    <div class="form-group row">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Message</label>
+        <div class="col-sm-10">
+            {{ form_row(form.message) }}
+        </div>
+    </div>
+    {{ form_rest(form) }}
+{{ form_end(form) }}
+</div>
+{% endblock %}
