@@ -12,15 +12,15 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 class CategoryController extends AbstractController
 {
     /**
-     * @Route("/category", name="category")
+     * @Route("/category/{title}", name="category")
      */
-    public function index(ValidatorInterface $validator)
+    public function index(ValidatorInterface $validator, $title)
     {
 
         $em = $this->getDoctrine()->getManager();
 
         $category = new Category();
-        $category->setTitle('Informatique');
+        $category->setTitle($title);
 
         $em->persist($category);
         $em->flush();
