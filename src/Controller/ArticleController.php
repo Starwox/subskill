@@ -54,15 +54,15 @@ class ArticleController extends AbstractController
     }
 
     /**
-     * @Route("/article/edit/{id}", name="article_edit")
+     * @Route("/article/edit/{id}-{$img}", name="article_edit")
      */
-    public function editArticles($id) {
+    public function editArticles($id,$img) {
 
 
         $em = $this->getDoctrine()->getManager();
         $article = $this->getDoctrine()->getRepository(Article::class)->find($id);
 
-        $article->setImage('/img/macbook.jpg');
+        $article->setImage('/img/'. $img);
         $em->persist($article);
         $em->flush();
 
