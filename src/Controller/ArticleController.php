@@ -40,38 +40,6 @@ class ArticleController extends AbstractController
     }
 
     /**
-     * @Route("/article/find/{id}", name="get_category")
-     */
-    public function getCategoryByID($id) {
-        $category = $this->getDoctrine()->getRepository(Article::class)->find($id);
-
-        if (!$category) {
-            throw $this->createNotFoundException(
-                'No product found for id '.$id
-            );
-        }
-
-        return new Response('Check out this great category: '.$category->getTitle());
-    }
-
-    /**
-     * @Route("/article/bdd", name="get_all_category")
-     */
-    public function getAllCategory() {
-        $article = $this->getDoctrine()->getRepository(Article::class)->findAll();
-
-        if (!$article) {
-            throw $this->createNotFoundException(
-                'No product found'
-            );
-        }
-
-
-        return new Response('Check out this great category: '.$article);
-    }
-
-
-    /**
      * @Route("/article/details/{id}", name="article_details")
      */
     public function getDetails($id) {
