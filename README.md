@@ -26,6 +26,16 @@ cd subskill/
 composer install
 ```
 
+Il vous faudra modifier le fichier .env
+
+```bash
+DATABASE_URL=mysql://root:admin@127.0.0.1:3306/subskill
+
+SQL
+root = Login
+admin = password
+```
+
 Nous pouvons donc démarrer le projet ! (N'oubliez pas de lancer MAMP)
 
 ```bash
