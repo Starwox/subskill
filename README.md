@@ -2,8 +2,7 @@
 
 Afin de rejoindre l'équipe de Subskill, un projet nous a été proposé.
 J'ai donc décidé de me lancer sur un projet Symfony4.
-(Malheureusement je n'ai pas réaliser le projet en entier, il reste donc en DEV pour le moment.
-Je compte bien évidemment le terminer.)
+(Malheureusement je n'ai pas réaliser le projet en entier, il reste donc en DEV pour le moment.)
 
 # Installation
 
